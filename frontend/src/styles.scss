@@ -1,3 +1,4 @@
+@use "sass:map";
 @use "@angular/material" as mat;
 
 @include mat.core();
@@ -18,6 +19,12 @@ $frontend-theme: mat.define-light-theme(
 );
 
 @include mat.all-component-themes($frontend-theme);
+
+$color-config: mat.get-color-config($frontend-theme);
+$primary-palette: map.get($color-config, "primary");
+$accent-palette: map.get($color-config, "accent");
+$warn-palette: map.get($color-config, "warn");
+$is-dark-theme: map.get($color-config, "is-dark");
 
 html,
 body {
