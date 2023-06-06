@@ -6,4 +6,8 @@ export interface SurveyHeader {
 export interface Question {
   type: string;
   id: number;
+  title: string;
+  description: string;
+  required: boolean;
+  options?: any[];
 }

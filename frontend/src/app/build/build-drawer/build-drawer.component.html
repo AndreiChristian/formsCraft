@@ -1,0 +1,39 @@
+<form #form="ngForm" (ngSubmit)="onSubmit(form)" class="container">
+  <h3>Add new Question</h3>
+  <mat-form-field class="form-field-full" appearance="outline">
+    <mat-label>Title</mat-label>
+    <input matInput type="text" name="title" required ngModel #title="ngModel">
+    <mat-error *ngIf="title.invalid && title.touched">
+      Title is <strong>required</strong>
+    </mat-error>
+
+  </mat-form-field>
+  <mat-form-field class="form-field-full" appearance="outline">
+    <mat-label>Description</mat-label>
+    <textarea matInput name="description" ngModel></textarea>
+  </mat-form-field>
+
+  <mat-slide-toggle color="primary" ngModel name="required">Required</mat-slide-toggle>
+
+  <mat-form-field appearance="outline" class="form-field-full">
+    <mat-label>Type</mat-label>
+    <mat-select [(value)]="selected" ngModel name="type" #type="ngModel"
+      required>
+      <mat-option value="text">Short Text</mat-option>
+      <mat-option value="paragraph">Paragraph</mat-option>
+      <mat-option value="option3">One choie</mat-option>
+      <mat-option value="option4">Multiple choice</mat-option>
+    </mat-select>
+    <mat-error *ngIf="type.invalid && type.touched">
+      Title is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+
+  <div class="spacer"></div>
+  <button mat-raised-button color="primary"
+    [disabled]="!form.valid">Add
+    <mat-icon>add</mat-icon>
+  </button>
+  <button mat-stroked-button type="button" color="warn">Delete <mat-icon>delete_outline</mat-icon>
+  </button>
+</form>

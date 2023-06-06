@@ -16,6 +16,7 @@ import { BuildHeaderComponent } from './build/build-header/build-header.componen
 import { BuildQuestionListComponent } from './build/build-question-list/build-question-list.component';
 import { BuildQuestionItemComponent } from './build/build-question-item/build-question-item.component';
 import { BuildActionsComponent } from './build/build-actions/build-actions.component';
+import { BuildDrawerComponent } from './build/build-drawer/build-drawer.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,6 +30,7 @@ import { BuildActionsComponent } from './build/build-actions/build-actions.compo
     BuildQuestionListComponent,
     BuildQuestionItemComponent,
     BuildActionsComponent,
+    BuildDrawerComponent,
   ],
   imports: [
     BrowserModule,

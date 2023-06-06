@@ -1,0 +1,23 @@
+.container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1vh;
+  width: 100%;
+  padding: 3vw;
+  box-sizing: border-box;
+  height: 100%;
+}
+
+.form-field-full{
+  width: 100%;
+}
+
+.spacer {
+  flex: 1;
+}
+
+button{
+  width: 100%;
+}

@@ -1,5 +1,12 @@
-<div class="container">
-  <app-build-header></app-build-header>
-  <app-build-actions></app-build-actions>
-  <app-build-question-list></app-build-question-list>
-</div>
+
+
+<mat-drawer-container>
+  <mat-drawer #drawer mode="over" position="end">
+    <app-build-drawer [drawer]="drawer"></app-build-drawer>
+  </mat-drawer>
+  <mat-drawer-content class="container">
+    <app-build-header></app-build-header>
+    <app-build-actions [drawer]="drawer"></app-build-actions>
+    <app-build-question-list></app-build-question-list>
+  </mat-drawer-content>
+</mat-drawer-container>
