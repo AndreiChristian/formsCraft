@@ -10,7 +10,12 @@ import { UserComponent } from './user/user.component';
 import { BuildComponent } from './build/build.component';
 import { ViewComponent } from './view/view.component';
 import { PreviewComponent } from './preview/preview.component';
-
+import { MaterialModule } from './material.module';
+import { FormsModule } from '@angular/forms';
+import { BuildHeaderComponent } from './build/build-header/build-header.component';
+import { BuildQuestionListComponent } from './build/build-question-list/build-question-list.component';
+import { BuildQuestionItemComponent } from './build/build-question-item/build-question-item.component';
+import { BuildActionsComponent } from './build/build-actions/build-actions.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,14 +24,20 @@ import { PreviewComponent } from './preview/preview.component';
     UserComponent,
     BuildComponent,
     ViewComponent,
-    PreviewComponent
+    PreviewComponent,
+    BuildHeaderComponent,
+    BuildQuestionListComponent,
+    BuildQuestionItemComponent,
+    BuildActionsComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MaterialModule,
+    FormsModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [MaterialModule],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

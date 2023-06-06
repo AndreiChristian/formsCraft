@@ -1,0 +1,33 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      <h1>Hello there, this is a brand new survey!</h1>
+    </mat-card-title>
+    <mat-card-subtitle>
+      <h3>Why don't you start by adding a title and description for the survey.
+        Choose something memorable</h3>
+    </mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-form-field class="form-field-full" appearance="outline">
+      <mat-label>Title</mat-label>
+      <input matInput type="text" name="title" required
+        [(ngModel)]="formHeader.title" #title="ngModel">
+      <mat-error *ngIf="title.invalid && title.touched">
+        Title is <strong>required</strong>
+      </mat-error>
+      <!-- <mat-hint align="start">Type the title of the survey
+      </mat-hint> -->
+    </mat-form-field>
+    <mat-form-field class="form-field-full" appearance="outline">
+      <mat-label>Description</mat-label>
+      <textarea matInput name="description" required
+        [(ngModel)]="formHeader.description" #description="ngModel"></textarea>
+      <mat-error *ngIf="description.invalid && description.touched">
+        Description is <strong>required</strong>
+      </mat-error>
+      <!-- <mat-hint align="start">Insert a description
+      </mat-hint> -->
+    </mat-form-field>
+  </mat-card-content>
+</mat-card>
