@@ -26,4 +26,12 @@ export class BuildService {
 
     this.questionsSubject.next(newQuestionArray);
   }
+
+  duplicate(question: Question) {
+    const newQuestion: Question = {
+      ...question,
+      id: Math.random(),
+    };
+    this.addQuestion(newQuestion);
+  }
 }

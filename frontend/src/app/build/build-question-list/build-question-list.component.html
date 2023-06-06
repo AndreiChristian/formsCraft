@@ -1,20 +1,6 @@
-<div class="list">
-  <mat-card *ngFor="let question of questions$ | async, index as i">
-    <mat-card-header>
-      <mat-card-title><h3>{{i + 1}}. {{question.title}}</h3></mat-card-title>
-      <mat-card-subtitle><h5>{{question.description}}</h5></mat-card-subtitle>
-    </mat-card-header>
-    <mat-card-content>
-      <mat-form-field *ngIf="question.type === 'text'" class="form-field-full"
-        appearance="outline">
-        <mat-label>{{question.title}}</mat-label>
-        <input matInput type="text" [placeholder]="question.description" />
-      </mat-form-field>
-      <mat-form-field *ngIf="question.type === 'paragraph'" appearance="outline"
-        class="form-field-full">
-        <mat-label>{{question.title}}</mat-label>
-        <textarea matInput type="text" [placeholder]="question.description"></textarea>
-      </mat-form-field>
-    </mat-card-content>
-  </mat-card>
+<h3 *ngIf="(questions$ | async).length===0">No questions yet :((</h3>
+<div class="list" *ngIf="(questions$ | async).length !== 0">
+  <div *ngFor="let question of questions$ | async, index as i" class="spacer">
+    <app-build-question-item [question]="question" [i]="i"></app-build-question-item>
+  </div>
 </div>

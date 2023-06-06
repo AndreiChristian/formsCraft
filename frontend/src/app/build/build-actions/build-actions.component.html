@@ -1,14 +1,15 @@
 <div class="action-bar">
-  <button mat-icon-button (click)="onAddNewQuestion()">
+  <button mat-icon-button (click)="onAddNewQuestion()"
+    matTooltip="Add a new question">
     <mat-icon>add</mat-icon>
   </button>
-  <button mat-icon-button>
+  <button mat-icon-button matTooltip="Settings for the form">
     <mat-icon>settings</mat-icon>
   </button>
-  <button mat-icon-button>
+  <button mat-icon-button matTooltip="Preview">
     <mat-icon>remove_red_eye</mat-icon>
   </button>
-  <button mat-icon-button>
+  <button mat-icon-button matTooltip="Send your survey">
     <mat-icon>send</mat-icon>
   </button>
 </div>

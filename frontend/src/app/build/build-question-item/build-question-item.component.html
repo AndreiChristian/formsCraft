@@ -1,1 +1,26 @@
-<p>build-question-item works!</p>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title><h3>{{i + 1}}. {{question.title}}</h3></mat-card-title>
+    <mat-card-subtitle><h5>{{question.description}}</h5></mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-form-field *ngIf="question.type === 'text'" class="form-field-full"
+      appearance="outline">
+      <mat-label>{{question.title}}</mat-label>
+      <input matInput type="text" [placeholder]="question.description" />
+    </mat-form-field>
+    <mat-form-field *ngIf="question.type === 'paragraph'" appearance="outline"
+      class="form-field-full">
+      <mat-label>{{question.title}}</mat-label>
+      <textarea matInput type="text" [placeholder]="question.description"></textarea>
+    </mat-form-field>
+
+    <h4>{{question.required}}</h4>
+
+  </mat-card-content>
+  <mat-card-actions align="end">
+    <button mat-icon-button color="accent" (click)="onDuplicate(question)"><mat-icon>queue</mat-icon></button>
+    <button mat-icon-button color="warn" (click)="onDelete(question.id)"><mat-icon>delete</mat-icon></button>
+  </mat-card-actions>
+
+</mat-card>
