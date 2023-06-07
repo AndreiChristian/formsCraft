@@ -1,0 +1,20 @@
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 0 2vw;
+  height: 7vh;
+  width: 100%;
+  background-color: white;
+  z-index: 1;
+  gap: 1vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  box-shadow: 0 0 4px 4px rgba(0, 0, 0, 0.184);
+}
+
+.spacer {
+  flex: 1;
+}

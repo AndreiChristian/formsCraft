@@ -5,10 +5,19 @@ import { BuildComponent } from './build/build.component';
 import { ViewComponent } from './view/view.component';
 import { PreviewComponent } from './preview/preview.component';
 import { UserComponent } from './user/user.component';
+import { SurveyComponent } from './survey/survey.component';
+import { SurveyListComponent } from './survey/survey-list/survey-list.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'build', component: BuildComponent },
+  {
+    path: 'survey',
+    component: SurveyComponent,
+    children: [
+      { path: '', component: SurveyListComponent },
+      { path: 'build', component: BuildComponent },
+    ],
+  },
   { path: 'view', component: ViewComponent },
   { path: 'preview', component: PreviewComponent },
   {

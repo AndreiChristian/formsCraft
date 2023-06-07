@@ -17,6 +17,11 @@ import { BuildQuestionListComponent } from './build/build-question-list/build-qu
 import { BuildQuestionItemComponent } from './build/build-question-item/build-question-item.component';
 import { BuildActionsComponent } from './build/build-actions/build-actions.component';
 import { BuildDrawerComponent } from './build/build-drawer/build-drawer.component';
+import { NavbarComponent } from './UI/navbar/navbar.component';
+import { SurveyComponent } from './survey/survey.component';
+import { SurveyListComponent } from './survey/survey-list/survey-list.component';
+import { FooterComponent } from './UI/footer/footer.component';
+import { NavDrawerComponent } from './UI/nav-drawer/nav-drawer.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,6 +36,11 @@ import { BuildDrawerComponent } from './build/build-drawer/build-drawer.componen
     BuildQuestionItemComponent,
     BuildActionsComponent,
     BuildDrawerComponent,
+    NavbarComponent,
+    SurveyComponent,
+    SurveyListComponent,
+    FooterComponent,
+    NavDrawerComponent,
   ],
   imports: [
     BrowserModule,
