@@ -16,8 +16,7 @@ export interface Survey {
   id?: number;
   header: SurveyHeader;
   questions: Question[];
-  status: 'active' | 'inactive';
+  active: boolean;
   created_at?: Date;
   updated_at?: Date;
-
 }

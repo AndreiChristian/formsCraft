@@ -28,9 +28,10 @@ export class BuildActionsComponent {
         description: 'Description',
       },
       questions: [],
-      status: Math.random() > 0.5 ? 'active' : 'inactive',
+      active: Math.random() > 0.5 ? true : false,
       created_at: new Date(),
       updated_at: new Date(),
+      id: Math.random(),
     };
     this.surveyService.addSurvey(newSurvey);
   }

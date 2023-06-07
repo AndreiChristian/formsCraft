@@ -1,1 +1,24 @@
-<p>status-dialog works!</p>
+<h1 mat-dialog-title align="center">Change Status</h1>
+<div mat-dialog-content>
+  <ng-container *ngIf="data === false">
+    <p>
+      This survey is currently active. By making it inactive, it means that
+      nobody visiting this page will be able to see or interact with it anymore.
+    </p>
+  </ng-container>
+  <ng-container *ngIf="data === true">
+    <p>
+      This survey is currently inactive. By making it active, it will be
+      accessible to visitors, allowing them to see and interact with its
+      content.
+    </p>
+  </ng-container>
+</div>
+<div mat-dialog-actions>
+  <button mat-button mat-dialog-close>Close</button>
+  <span style="flex:1"></span>
+  <button mat-raised-button mat-dialog-close color="primary"
+    *ngIf="data === false">Activate</button>
+  <button mat-raised-button mat-dialog-close color="primary"
+    *ngIf="data === true">Deactivate</button>
+</div>

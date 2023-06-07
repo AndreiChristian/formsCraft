@@ -21,4 +21,6 @@ export class SurveyService {
     const newSurveys = currentSurveys.filter((s) => s.id !== id);
     this.SurveySubject.next(newSurveys);
   }
+
+  toggleStatus() {}
 }
