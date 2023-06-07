@@ -1,1 +1,8 @@
-<p>survey-list works!</p>
+<div class="container">
+  <div class="row">
+    <h3>My surveys</h3>
+    <div class="spacer"></div>
+    <button mat-fab color="primary" routerLink="/survey/build" ><mat-icon>add</mat-icon></button>
+  </div>
+  <h3 *ngIf="(surveyList$ | async)">No survey</h3>
+</div>

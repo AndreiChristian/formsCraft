@@ -11,3 +11,10 @@ export interface Question {
   required: boolean;
   options?: any[];
 }
+
+export interface Survey {
+  id?: number;
+  header: SurveyHeader;
+  questions: Question[];
+  status: 'active' | 'inactive';
+}
