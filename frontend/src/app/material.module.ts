@@ -16,6 +16,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { CdkTableModule } from '@angular/cdk/table';
 
 @NgModule({
   imports: [
@@ -36,6 +37,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
     MatSnackBarModule,
     MatTooltipModule,
     MatSidenavModule,
+    CdkTableModule,
   ],
   exports: [
     MatButtonModule,
@@ -55,6 +57,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
     MatSnackBarModule,
     MatTooltipModule,
     MatSidenavModule,
+    CdkTableModule,
   ],
 })
 export class MaterialModule {}

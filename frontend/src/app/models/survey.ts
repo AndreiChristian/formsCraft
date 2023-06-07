@@ -17,4 +17,7 @@ export interface Survey {
   header: SurveyHeader;
   questions: Question[];
   status: 'active' | 'inactive';
+  created_at?: Date;
+  updated_at?: Date;
+
 }

@@ -8,9 +8,15 @@
   box-sizing: border-box;
 }
 
+.container app-survey-table {
+  width: 100%;
+}
+
 .row {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
 }
+
+

@@ -1,0 +1,73 @@
+<table cdk-table [dataSource]="dataSource">
+  <ng-container cdkColumnDef="index">
+    <th cdk-header-cell *cdkHeaderCellDef> No. </th>
+    <td cdk-cell *cdkCellDef="let element, index as i"> {{i+1}} </td>
+  </ng-container>
+
+  <ng-container cdkColumnDef="title">
+    <th cdk-header-cell *cdkHeaderCellDef> Title </th>
+    <td cdk-cell *cdkCellDef="let element"> {{element.header.title}} </td>
+  </ng-container>
+
+  <ng-container cdkColumnDef="questions">
+    <th cdk-header-cell *cdkHeaderCellDef> Questions </th>
+    <td cdk-cell *cdkCellDef="let element"> {{element.questions.length===0? "-":element.questions.length}}
+    </td>
+  </ng-container>
+
+  <ng-container cdkColumnDef="responses">
+    <th cdk-header-cell *cdkHeaderCellDef> Responses </th>
+    <td cdk-cell *cdkCellDef="let element"> {{element.questions.length===0? "-":element.questions.length}}
+    </td>
+  </ng-container>
+
+  <ng-container cdkColumnDef="status">
+    <th cdk-header-cell *cdkHeaderCellDef> Status </th>
+    <td cdk-cell *cdkCellDef="let element"> <mat-slide-toggle
+        [checked]="element.status === 'active'">{{element.status
+        === "active"? "Active":"Inactive"}}</mat-slide-toggle>
+
+    </td>
+  </ng-container>
+
+  <ng-container cdkColumnDef="metrics">
+    <th cdk-header-cell *cdkHeaderCellDef> Metrics </th>
+    <td cdk-cell *cdkCellDef="let element"> <button mat-icon-button><mat-icon>ballot</mat-icon></button>
+    </td>
+  </ng-container>
+
+  <ng-container cdkColumnDef="edit">
+    <th cdk-header-cell *cdkHeaderCellDef> Edit </th>
+    <td cdk-cell *cdkCellDef="let element"> <button mat-icon-button
+        color="accent"><mat-icon>edit</mat-icon></button>
+    </td>
+  </ng-container>
+
+  <ng-container cdkColumnDef="created">
+    <th cdk-header-cell *cdkHeaderCellDef> Created </th>
+    <td cdk-cell *cdkCellDef="let element">{{element.created_at | date }}
+    </td>
+  </ng-container>
+
+  <ng-container cdkColumnDef="actions">
+    <th cdk-header-cell *cdkHeaderCellDef> Actions </th>
+    <td cdk-cell *cdkCellDef="let element"> <button [matMenuTriggerFor]="menu"
+        mat-icon-button
+        color="accent"><mat-icon>more_vert</mat-icon></button>
+    </td>
+  </ng-container>
+
+  <tr cdk-header-row *cdkHeaderRowDef="displayedColumns"></tr>
+  <tr cdk-row *cdkRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
+<mat-menu #menu="matMenu">
+  <button mat-menu-item color="warn">
+    <mat-icon color="warn">delete</mat-icon>
+    <span>Delete</span>
+  </button>
+  <button mat-menu-item>
+    <mat-icon>settings</mat-icon>
+    <span>Settings</span>
+  </button>
+</mat-menu>

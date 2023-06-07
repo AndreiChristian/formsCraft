@@ -1,7 +1,8 @@
 import { Component, Input } from '@angular/core';
 import { BuildService } from '../build.service';
-import { Question } from 'src/app/models/survey';
+import { Question, Survey } from 'src/app/models/survey';
 import { MatDrawer } from '@angular/material/sidenav';
+import { SurveyService } from 'src/app/survey/survey.service';
 
 @Component({
   selector: 'app-build-actions',
@@ -9,16 +10,28 @@ import { MatDrawer } from '@angular/material/sidenav';
   styleUrls: ['./build-actions.component.scss'],
 })
 export class BuildActionsComponent {
-  constructor(private buildService: BuildService) {}
+  constructor(
+    private buildService: BuildService,
+    private surveyService: SurveyService
+  ) {}
 
   @Input() drawer: MatDrawer;
 
   onAddNewQuestion() {
-    // const newQuestion: Question = {
-    //   id: Math.random(),
-    //   type: 'text',
-    // };
-    // this.buildService.addQuestion(newQuestion);
     this.drawer.toggle();
+  }
+
+  onSaveSurvey() {
+    const newSurvey: Survey = {
+      header: {
+        title: 'Title',
+        description: 'Description',
+      },
+      questions: [],
+      status: Math.random() > 0.5 ? 'active' : 'inactive',
+      created_at: new Date(),
+      updated_at: new Date(),
+    };
+    this.surveyService.addSurvey(newSurvey);
   }
 }

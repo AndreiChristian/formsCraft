@@ -22,6 +22,10 @@ import { SurveyComponent } from './survey/survey.component';
 import { SurveyListComponent } from './survey/survey-list/survey-list.component';
 import { FooterComponent } from './UI/footer/footer.component';
 import { NavDrawerComponent } from './UI/nav-drawer/nav-drawer.component';
+import { SurveyTableComponent } from './survey/survey-table/survey-table.component';
+import { DialogComponent } from './survey/dialog/dialog.component';
+import { DeleteDialogComponent } from './survey/dialog/delete-dialog/delete-dialog.component';
+import { StatusDialogComponent } from './survey/dialog/status-dialog/status-dialog.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,6 +45,10 @@ import { NavDrawerComponent } from './UI/nav-drawer/nav-drawer.component';
     SurveyListComponent,
     FooterComponent,
     NavDrawerComponent,
+    SurveyTableComponent,
+    DialogComponent,
+    DeleteDialogComponent,
+    StatusDialogComponent,
   ],
   imports: [
     BrowserModule,
