@@ -1,19 +1,21 @@
 <form #form="ngForm" (ngSubmit)="onSubmit(form)" class="container">
   <h3>Add new Question</h3>
+
   <mat-form-field class="form-field-full" appearance="outline">
     <mat-label>Title</mat-label>
     <input matInput type="text" name="title" required ngModel #title="ngModel">
-    <mat-error *ngIf="title.invalid && title.touched">
-      Title is <strong>required</strong>
-    </mat-error>
-
+    <mat-error *ngIf="title.invalid && title.touched">Title is <strong>required</strong></mat-error>
   </mat-form-field>
+
   <mat-form-field class="form-field-full" appearance="outline">
     <mat-label>Description</mat-label>
     <textarea matInput name="description" ngModel></textarea>
   </mat-form-field>
 
-  <mat-slide-toggle color="primary" ngModel name="required">Required</mat-slide-toggle>
+  <div class="row">
+    <h3>Required</h3>
+    <mat-slide-toggle color="primary" ngModel name="required"></mat-slide-toggle>
+  </div>
 
   <mat-form-field appearance="outline" class="form-field-full">
     <mat-label>Type</mat-label>
@@ -21,19 +23,40 @@
       required>
       <mat-option value="text">Short Text</mat-option>
       <mat-option value="paragraph">Paragraph</mat-option>
-      <mat-option value="option3">One choie</mat-option>
-      <mat-option value="option4">Multiple choice</mat-option>
+      <mat-option value="oneChoice">One choice</mat-option>
+      <mat-option value="multipleChoice">Multiple choice</mat-option>
     </mat-select>
-    <mat-error *ngIf="type.invalid && type.touched">
-      Title is <strong>required</strong>
-    </mat-error>
+    <mat-error *ngIf="type.invalid && type.touched">Title is <strong>required</strong></mat-error>
   </mat-form-field>
 
+  <div class="options"
+    *ngIf="form.value.type === 'oneChoice' || form.value.type === 'multipleChoice' ">
+    <button mat-stroked-button (click)="onAddOption()" type="button">
+      <mat-icon>add</mat-icon> Add new option
+    </button>
+
+    <div *ngFor="let option of options, index as i" class="option-row">
+
+      <mat-icon *ngIf="form.value.type === 'multipleChoice'">check_box_outline_blank</mat-icon>
+      <mat-icon *ngIf="form.value.type === 'oneChoice'">radio_button_unchecked</mat-icon>
+
+      <mat-form-field matInput class="form-field-full">
+
+        <input matInput class="form-field-full" [(ngModel)]="options[i]"
+          [ngModelOptions]="{standalone: true}" />
+      </mat-form-field>
+
+      <button mat-icon-button type="button" color="primary"
+        (click)="onDeleteOption(i)">
+        <mat-icon>delete</mat-icon>
+      </button>
+
+    </div>
+
+  </div>
+
   <div class="spacer"></div>
-  <button mat-raised-button color="primary"
-    [disabled]="!form.valid">Add
-    <mat-icon>add</mat-icon>
-  </button>
-  <button mat-stroked-button type="button" color="warn">Delete <mat-icon>delete_outline</mat-icon>
-  </button>
+  <button mat-raised-button color="primary" [disabled]="!form.valid">Add
+    <mat-icon>add</mat-icon></button>
+  <button mat-stroked-button type="button" color="warn">Delete <mat-icon>delete_outline</mat-icon></button>
 </form>

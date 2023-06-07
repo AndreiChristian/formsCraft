@@ -11,7 +11,7 @@ import { BuildComponent } from './build/build.component';
 import { ViewComponent } from './view/view.component';
 import { PreviewComponent } from './preview/preview.component';
 import { MaterialModule } from './material.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BuildHeaderComponent } from './build/build-header/build-header.component';
 import { BuildQuestionListComponent } from './build/build-question-list/build-question-list.component';
 import { BuildQuestionItemComponent } from './build/build-question-item/build-question-item.component';
@@ -38,6 +38,7 @@ import { BuildDrawerComponent } from './build/build-drawer/build-drawer.componen
     BrowserAnimationsModule,
     MaterialModule,
     FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [MaterialModule],
   bootstrap: [AppComponent],

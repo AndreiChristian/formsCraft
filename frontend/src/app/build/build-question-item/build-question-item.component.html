@@ -15,6 +15,20 @@
       <textarea matInput type="text" [placeholder]="question.description"></textarea>
     </mat-form-field>
 
+    <mat-radio-group *ngIf="question.type === 'oneChoice'"
+      aria-label="Select an option" color="primary">
+      <mat-radio-button *ngFor="let option of question.options" [value]="option">
+        {{option}}
+      </mat-radio-button>
+    </mat-radio-group>
+
+    <div *ngIf="question.type === 'multipleChoice'" class="checkbox-group">
+      <mat-checkbox *ngFor="let option of question.options" [value]="option"
+        color="primary">
+        {{option}}
+      </mat-checkbox>
+    </div>
+
     <h4>{{question.required}}</h4>
 
   </mat-card-content>
@@ -22,5 +36,4 @@
     <button mat-icon-button color="accent" (click)="onDuplicate(question)"><mat-icon>queue</mat-icon></button>
     <button mat-icon-button color="warn" (click)="onDelete(question.id)"><mat-icon>delete</mat-icon></button>
   </mat-card-actions>
-
 </mat-card>
